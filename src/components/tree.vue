@@ -15,7 +15,6 @@
     <el-tree :data="treeList" node-key="polyOrganiId" ref="treeList" highlight-current :props="defaultProps" default-expand-all :expand-on-click-node="false">
       <div class="custom-tree-node2" slot-scope="{ node, data }">
         <div >
-
           <span class="addborder">111</span>
         </div>
       </div>
