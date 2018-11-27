@@ -1,0 +1,123 @@
+@mixin select_options($w:142px,$h:32px,$c:#303343,$pl:13px,$fs:12px){
+  position: relative;
+  display: inline-block;
+  background: rgba(0,0,0,0);
+  /deep/ .el-select{
+    background: rgba(0,0,0,0);
+    .el-input__suffix{
+      display: none;
+    }
+    .el-input{
+      background: rgba(0,0,0,0);
+      .el-input__inner{
+        width: $w;
+        height: $h;
+        padding: 0;
+        line-height: $h;
+        background: rgba(0,0,0,0);
+        font-size: $fs;
+        color: $c;
+        letter-spacing: 0;
+        padding-left: $pl;
+      }
+    }
+  }
+  .select_options_icon{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+    z-index: -1;
+    /deep/ .el-icon-d-caret{
+      color: #555555;
+    }
+  }
+}
+@mixin input($w,$h:32px,$c:#303343,$fz:12px){
+  /deep/ .el-input{
+    width: $w;
+    height: $h;
+    .el-input__inner{
+      width: $w;
+      height: $h;
+      color: $c;
+      font-size: $fz;
+      &::-webkit-input-placeholder{
+        color: #BBBBBB;
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+@mixin tree($w:162px,$h:32px,$c:#505360,$bdc:#9ea7b4,$fz:12px,$mt:10px,$ml:46px,$iw:10px){
+  color: $c;
+  .root{
+    overflow: hidden;
+    position: relative;
+    .root_name{
+      width: $w;
+      height: $h;
+      border-radius: 4px;
+      border: 1.5px solid $bdc;
+      text-align: center;
+      line-height: $h;
+      cursor: pointer;
+      font-size: ($fz + 1px);
+    }
+  }
+  .children{
+    margin-top: $mt;
+    margin-left: $ml;
+    position: relative;
+    z-index: 1;
+    .children_content{
+      display: flex;
+      align-items: center;
+      .left_icon{
+        display: flex;
+        align-items: center;
+        width: ($iw*2);
+        cursor: pointer;
+        .icon{
+          width: $iw;
+          height: $iw;
+          box-sizing: border-box;
+          color: #4A90E2;
+          border: 1px solid #4A90E2;
+          border-radius: 2px;
+          position: relative;
+          z-index: 1;
+          background-color: #fff;
+          >i{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: $fz;
+            transform: translate(-50%,-45%);
+          }
+        }
+        .line{
+          width: $iw;
+          border-bottom: 1px dashed $bdc;
+        }
+      }
+      .content{
+        width: $w;
+        height: $h;
+        border-radius: 8px;
+        background-color: #fff;
+        border: 1.5px solid $bdc;
+        text-align: center;
+        line-height: $h;
+        cursor: pointer;
+        font-size: ($fz + 1px);
+      }
+    }
+  }
+  .v_line{
+    position: absolute;
+    height: 100%;
+    border-left: 1px dashed $bdc;
+    left: ($ml+($iw/2));
+  }
+}

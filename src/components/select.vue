@@ -16,7 +16,7 @@
 
 <script>
   export default {
-    name: "select",
+    name: "selection",
     data () {
       return {
         card_calss: '',
@@ -47,31 +47,9 @@
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/scss/mixin";
   .select_options{
-    position: relative;
-    display: inline-block;
-    width: 142px;
-    .el-select{
-      .el-input__suffix{
-        display: none;
-      }
-      .el-input{
-        width: 142px;
-        height: 32px;
-        .el-input_inner{
-          width: 100%;
-          height: 100%;
-          padding: 0;
-          text-align: center;
-          line-height: 32px;
-        }
-      }
-    }
-    .select_options_icon{
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translate(0, -50%);
-    }
+    @include select_options(178px,40px,#000,10px,16px)
   }
+
 </style>

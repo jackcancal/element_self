@@ -3,11 +3,20 @@ import Router from 'vue-router'
 import select from '../components/select'
 import color_select from '../components/color_select'
 import date_picker from '../components/date_picker'
+import tree from '../components/tree.vue'
+import date from '../components/date.vue'
+import newChannel from '../components/newChannel.vue'
+import shu from '../components/shu.vue'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
+    {
+      path: '/',
+      redirect: 'newChannel'
+    },
     {
       path: '/select',
       name: 'select',
@@ -22,6 +31,26 @@ export default new Router({
       path: '/date_picker',
       name: 'date_picker',
       component: date_picker
+    },
+    {
+      path: '/tree',
+      name: 'tree',
+      component: tree
+    },
+    {
+      path: '/date',
+      name: 'date',
+      component: date
+    },
+    {
+      path: '/newChannel',
+      name: 'newChannel',
+      component: newChannel
+    },
+    {
+      path: '/shu',
+      name: 'shu',
+      component: shu
     },
   ]
 })

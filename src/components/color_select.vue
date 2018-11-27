@@ -1,7 +1,12 @@
 <template>
-  <div class="card_font_color">
-    <el-input v-model="color"></el-input>
-    <el-color-picker v-model="color"></el-color-picker>
+  <div>
+    <div class="card_font_color">
+      <el-input v-model="color"></el-input>
+      <el-color-picker v-model="color"></el-color-picker>
+    </div>
+    <div class="input">
+      <el-input></el-input>
+    </div>
   </div>
 </template>
 
@@ -17,6 +22,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/scss/mixin';
   .card_font_color{
     display: flex;
     align-items: center;
@@ -63,5 +69,8 @@
         }
       }
     }
+  }
+  .input{
+    @include input(100px,50px,#ccc,18px)
   }
 </style>

@@ -5,6 +5,7 @@
         v-model="startTime"
         type="date"
         :clearable="false"
+        @change="date_change('start')"
         placeholder="开始日期">
       </el-date-picker>
     </div>
@@ -14,6 +15,7 @@
         v-model="endTime"
         type="date"
         :clearable="false"
+        @change="date_change('end')"
         placeholder="结束日期">
       </el-date-picker>
     </div>
@@ -27,6 +29,22 @@
       return {
         startTime: '',
         endTime: '',
+      }
+    },
+    methods: {
+      date_change(type) {
+        let {startTime,endTime} = this
+        if (!startTime || !endTime) return
+        let dis = new Date(endTime) - new Date(startTime)
+        if (dis <= 0) {
+          this.$alert('结束时间必须大于开始时间!', '提示', {
+            confirmButtonText: '确定',
+            callback: action => {
+              if (type === 'start') this.startTime = ''
+              else if (type === 'end') this.endTime = ''
+            }
+          })
+        }
       }
     }
   }
