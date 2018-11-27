@@ -113,7 +113,17 @@
         font-size: ($fz + 1px);
       }
     }
+    &:last-of-type:after{
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      top: ($mt + $iw);
+      left: ($iw/2);
+      background-color: #fff;
+    }
   }
+
   .v_line{
     position: absolute;
     height: 100%;
