@@ -6,7 +6,7 @@ import date_picker from '../components/date_picker'
 import tree from '../components/tree.vue'
 import date from '../components/date.vue'
 import newChannel from '../components/newChannel.vue'
-import shu from '../components/shu.vue'
+import b from '../components/test.vue'
 
 Vue.use(Router)
 
@@ -48,9 +48,13 @@ export default new Router({
       component: newChannel
     },
     {
-      path: '/shu',
-      name: 'shu',
-      component: shu
+      path: '/b',
+      name: 'b',
+      component: b
     },
+    {
+      path: '/songhelouTable',
+      component: ()=> import('../components/songhelouTable')
+    }
   ]
 })
